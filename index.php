@@ -46,7 +46,7 @@ $domandeFrequenti = [
                 Sappiamo che la sicurezza e la privacy sono importanti per te e lo sono anche per noi. Per noi è imperativo offrire un'elevata sicurezza e assicurarti che le tue informazioni sono al sicuro e accessibili quando ne hai bisogno
             </p>",
 
-            "<>
+            "<p>
                 Siamo costantemente al lavoro per garantire un'elevata sicurezza, proteggere la tua privacy e rendere Google ancora più efficace ed efficiente per te. Spendiamo centinaia di milioni di dollari ogni anno per la sicurezza e ci avvaliamo di esperti di fama mondiale in materia di sicurezza dei dati per mantenere le tue informazioni al sicuro. Abbiamo inoltre sviluppato strumenti per la sicurezza e la privacy di facile utilizzo come Google Dashboard, la verifica in due passaggi e Impostazioni annunci. Così, per quanto riguarda le informazioni che condividi con Google, hai il massimo controllo.
             </p>",
 
@@ -62,25 +62,25 @@ $domandeFrequenti = [
     [
         "titolo" => "Perché il mio account è associato a un paese?",
         "testo" => [
-            "<p>
+            "<p> 
                 Il tuo account è associato a un paese (o territorio) nei Termini di servizio per poter stabilire due cose:
-                    <ol>
-                        <li>
-                            La società consociata Google che offre i servizi, tratta le tue informazioni ed è responsabile del rispetto delle leggi sulla privacy vigenti. Generalmente Google offre i propri servizi per i consumatori tramite una delle due società seguenti:
-                                <ol type='a'>
-                                    <li>
-                                        Google Ireland Limited, se gli utenti sono residenti nello Spazio economico europeo (paesi dell'Unione europea, oltre a Islanda, Liechtenstein e Norvegia) o in Svizzera.
-                                    </li>
-                                    <li>
-                                        Google LLC, con sede negli Stati Uniti, per il resto del mondo.
-                                    </li>
-                                </ol>
-                        </li>
-                        <li>
-                            La versione dei termini che regola il nostro rapporto, che può variare in base alle leggi locali.
-                        </li>
-                    </ol>
             </p>",
+            "<ol>
+                <li>
+                    La società consociata Google che offre i servizi, tratta le tue informazioni ed è responsabile del rispetto delle leggi sulla privacy vigenti. Generalmente Google offre i propri servizi per i consumatori tramite una delle due società seguenti:
+                        <ol type='a'>
+                            <li>
+                                Google Ireland Limited, se gli utenti sono residenti nello Spazio economico europeo (paesi dell'Unione europea, oltre a Islanda, Liechtenstein e Norvegia) o in Svizzera.
+                            </li>
+                            <li>
+                                Google LLC, con sede negli Stati Uniti, per il resto del mondo.
+                            </li>
+                        </ol>
+                </li>
+                <li>
+                    La versione dei termini che regola il nostro rapporto, che può variare in base alle leggi locali.
+                </li>
+            </ol>",
             "<p>
                 Tieni presente che i servizi Google sono fondamentalmente gli stessi a prescindere dalla società consociata che li offre o dal paese a cui è associato il tuo account.
             </p>",
@@ -123,21 +123,181 @@ $domandeFrequenti = [
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0v4LLanw2qksYuRlEzO+tcaEPQogQ0KaoGN26/zrn20ImR1DfuLWnOo7aBA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <title>Domande frequenti</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Open Sans', sans-serif;
+            font-size: 14px;
+        }
+
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: #fff;
+            padding: 15px 20px 0 20px;
+            border-bottom: 1px solid grey;
+            color: #5f6368;
+        }
+
+        .header__top {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 50px;
+        }
+
+        .header__top-left,
+        .header__top-right {
+            display: flex;
+            align-items: center;
+        }
+
+        .header__top-left img {
+            width: 100%;
+            vertical-align: bottom;
+        }
+
+        .header__top-left .text {
+            font-size: 25px;
+        }
+
+        .header__top-right i {
+            font-size: 20px;
+            margin-right: 10px;
+        }
+
+        .header__top-right .cerchio {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: red;
+        }
+
+        .header__bottom {
+            height: 30px;
+            margin-top: 10px;
+        }
+
+        .header__bottom ul {
+            list-style: none;
+            height: 100%;
+        }
+
+        .header__bottom ul li {
+            display: inline-block;
+            height: 100%;
+            margin-right: 30px;
+        }
+
+        .header__bottom ul li a {
+            display: inline-block;
+            height: 100%;
+            text-decoration: none;
+            color: #5f6368;
+        }
+
+        .header__bottom ul li a.active {
+            color: #3367d6;
+            border-bottom: 3px solid #3367d6;
+            padding-bottom: 6px;
+        }
+
+        main {
+            width: 70%;
+            margin: 80px auto;
+        }
+
+        main h2 {
+            color: #3c4043;
+            font-size: 24px;
+            line-height: 32px;
+            margin: 0;
+            padding: 64px 0 0 0;
+        }
+
+        main h3 {
+            color: #3c4043;
+            font-size: 18px;
+            line-height: 26px;
+            margin: 0;
+            padding: 52px 0 0 0;
+        }
+
+        main ol {
+            margin: 0 0 0 16px;
+        }
+
+        main li {
+            line-height: 24px;
+            padding-top: 12px;
+            padding-left: 16px;
+        }
+
+        main a {
+            text-decoration: none;
+        }
+
+        main p {
+            margin: 10px 0;
+            line-height: 24px;
+            padding-top: 20px;
+        }
+    </style>
 </head>
 
 <body>
 
-    <h1>Domande frequenti</h1>
-
-    <?php foreach ($domandeFrequenti as $paragrafo) { ?>
-        <div>
-            <h2> <?php echo $paragrafo['titolo']; ?> </h2>
-            <?php foreach ($paragrafo['testo'] as $paragrafoSingolo) { ?>
-                <?php echo $paragrafoSingolo; ?>
-            <?php } ?>
+    <header>
+        <div class="header__top">
+            <div class="header__top-left">
+                <span><img src="https://www.gstatic.com/images/branding/googlelogo/svg/googlelogo_clr_74x24px.svg" alt="Logo"></span>
+                <span class="text">Privacy e termini</span>
+            </div>
+            <div class="header__top-right">
+                <i class="fas fa-th"></i>
+                <div class="cerchio">
+                    <span>LS</span>
+                </div>
+            </div>
         </div>
-    <?php } ?>
+        <div class="header__bottom">
+            <ul>
+                <li><a href="#">Introduzione</a></li>
+                <li><a href="#">Norme sulla privacy</a></li>
+                <li><a href="#">Termini di servizio</a></li>
+                <li><a href="#">Tecnologie</a></li>
+                <li><a class="active" href="#">Domande frequenti</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <main>
+        <?php foreach ($domandeFrequenti as $paragrafo) { ?>
+            <div>
+                <h2> <?php echo $paragrafo['titolo']; ?> </h2>
+                <?php foreach ($paragrafo['testo'] as $paragrafoSingolo) { ?>
+                    <?php echo $paragrafoSingolo; ?>
+                <?php } ?>
+            </div>
+        <?php } ?>
+    </main>
+
+    <footer></footer>
 
 </body>
 
